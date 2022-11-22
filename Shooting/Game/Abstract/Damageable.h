@@ -20,7 +20,7 @@ public:
 
 	/**
 	* 被ダメージ当たり判定を行うときに使うポリゴンを返す
-	* @return ダメージを受ける範囲を表すポリゴン
+	* @return ダメージを受ける範囲を表す四角形
 	*/
-	virtual Polygon GetDamageableBody() = 0;
+	virtual RectF GetDamageableBody() = 0;
 };

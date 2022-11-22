@@ -6,6 +6,6 @@ CollisionTemplate::CollisionTemplate(Vec2 position, Vec2 collisionBasePoint, Vec
 
 }
 
-Polygon CollisionTemplate::GetCollisionBody() const {
-	return RectF{ pos + collisionBasePoint, collisionSize }.asPolygon();
+RectF CollisionTemplate::GetCollisionBody() const {
+	return RectF{ pos + collisionBasePoint, collisionSize };
 }

@@ -1,6 +1,6 @@
 ﻿#include "Attackable.h"
 
-bool Attackable::IsInCollision(Polygon body) {
+bool Attackable::IsInCollision(RectF body) {
 	return body.intersects(GetAttackBody());
 }
 

@@ -11,6 +11,6 @@ void BulletTemplate::Update() {
 	EnsureMove();
 }
 
-Polygon BulletTemplate::GetAttackBody() {
+RectF BulletTemplate::GetAttackBody() {
 	return GetCollisionBody();
 }

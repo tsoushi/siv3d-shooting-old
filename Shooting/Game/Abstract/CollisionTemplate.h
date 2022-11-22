@@ -8,5 +8,5 @@ protected:
 	Vec2 collisionSize;
 public:
 	CollisionTemplate(Vec2 position, Vec2 collisionBasePoint, Vec2 collisionSize);
-	Polygon GetCollisionBody() const;
+	RectF GetCollisionBody() const;
 };

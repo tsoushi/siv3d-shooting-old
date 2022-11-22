@@ -10,5 +10,5 @@ public:
 	void Update() override;
 	virtual void Move() = 0;
 
-	Polygon GetDamageableBody() override;
+	RectF GetDamageableBody() override;
 };

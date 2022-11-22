@@ -12,6 +12,6 @@ void UnitTemplate::Update() {
 	EnsureMove();
 }
 
-Polygon UnitTemplate::GetDamageableBody() {
+RectF UnitTemplate::GetDamageableBody() {
 	return GetCollisionBody();
 }

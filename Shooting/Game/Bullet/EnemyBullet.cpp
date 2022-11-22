@@ -14,5 +14,5 @@ void EnemyBullet::Draw() const {
 }
 
 void EnemyBullet::Attack(Damageable& target) {
-	target.Damaged(3);
+	target.Damaged(10);
 }

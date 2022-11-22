@@ -12,16 +12,16 @@ public:
 	virtual void Attack(Damageable &target) = 0;
 
 	/**
-	* 与ダメージ当たり判定を行うときに使うポリゴンを返す
-	* @return 攻撃範囲を表すポリゴン
+	* 与ダメージ当たり判定を行うときに使う四角形を返す
+	* @return 攻撃範囲を表す四角形
 	*/
-	virtual Polygon GetAttackBody() = 0;
+	virtual RectF GetAttackBody() = 0;
 
 	/**
-	* ポリゴンが攻撃範囲内かどうかを調べる
+	* 四角形が攻撃範囲内かどうかを調べる
 	* @return 攻撃範囲内なら true
 	*/
-	bool IsInCollision(Polygon body);
+	bool IsInCollision(RectF body);
 
 	/**
 	* オブジェクトに攻撃処理を行う。エンティティマネージャーから呼ばれる。
