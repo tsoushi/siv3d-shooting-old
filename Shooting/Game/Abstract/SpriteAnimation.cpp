@@ -1,16 +1,16 @@
 ﻿#include "SpriteAnimation.h"
 
-SpriteAnimation::SpriteAnimation(Texture spriteSheet, SpriteSheetConfig config)
-	: spriteSheet{ spriteSheet }, spriteSheetConfig{ config }
+SpriteAnimation::SpriteAnimation(String spriteSheetName, SpriteSheetConfig config)
+	: spriteSheetName{ spriteSheetName }, spriteSheetConfig{ config }
 {
 }
-SpriteAnimation::SpriteAnimation(Texture spriteSheet, Point size, Point length)
-	: SpriteAnimation{ spriteSheet, SpriteSheetConfig{ size, length } }
+SpriteAnimation::SpriteAnimation(String spriteSheetName, Point size, Point length)
+	: SpriteAnimation{ spriteSheetName, SpriteSheetConfig{ size, length } }
 {
 }
 
 TextureRegion SpriteAnimation::GetSprite(int32 index) const {
-	return spriteSheet(
+	return TextureAsset(spriteSheetName)(
 		(index % spriteSheetConfig.length.x) * spriteSheetConfig.size.x,
 		(index / spriteSheetConfig.length.x) * spriteSheetConfig.size.y,
 		spriteSheetConfig.size

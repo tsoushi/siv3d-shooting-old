@@ -1,5 +1,6 @@
 ﻿# include <Siv3D.hpp> // OpenSiv3D v0.6.5
 #include "Common.h"
+#include "Init.h"
 #include "Game/GameScene.h"
 
 void Main()
@@ -9,6 +10,8 @@ void Main()
 	manager.add<GameScene>(U"Game");
 
 	manager.init(U"Game");
+
+	SetAssets();
 
 	while (System::Update())
 	{

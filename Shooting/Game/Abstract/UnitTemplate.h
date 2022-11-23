@@ -6,7 +6,7 @@
 class UnitTemplate : public Unit, public SpriteAnimation, public CollisionTemplate
 {
 public:
-	UnitTemplate(int32 hp, Texture spriteSheet, SpriteSheetConfig spriteSheetConfig, Vec2 position, Vec2 collisionBasePoint, Vec2 collisionSize);
+	UnitTemplate(int32 hp, String spriteSheetName, SpriteSheetConfig spriteSheetConfig, Vec2 position, Vec2 collisionBasePoint, Vec2 collisionSize);
 	void Update() override;
 	virtual void Move() = 0;
 

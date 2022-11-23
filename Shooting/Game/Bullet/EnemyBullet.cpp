@@ -1,7 +1,7 @@
 ﻿#include "EnemyBullets.h"
 
 EnemyBullet::EnemyBullet()
-	: BulletTemplate(Texture(), SpriteSheetConfig{}, Vec2{ 300, 100 }, Vec2{ -8, -8 }, Vec2{ 16, 16 })
+	: BulletTemplate(U"", SpriteSheetConfig{}, Vec2{300, 100}, Vec2{-8, -8}, Vec2{16, 16})
 {
 
 }

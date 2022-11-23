@@ -113,6 +113,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Common.cpp" />
     <ClCompile Include="Game\Abstract\Attackable.cpp" />
     <ClCompile Include="Game\Abstract\Bullet.cpp" />
     <ClCompile Include="Game\Abstract\BulletTemplate.cpp" />
@@ -127,6 +128,7 @@
     <ClCompile Include="Game\EntityManager.cpp" />
     <ClCompile Include="Game\GameScene.cpp" />
     <ClCompile Include="Game\Unit\Player.cpp" />
+    <ClCompile Include="Init.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -158,6 +160,7 @@
     <Image Include="App\example\texture\wood.jpg" />
     <Image Include="App\example\windmill.png" />
     <Image Include="App\icon.ico" />
+    <Image Include="App\player.png" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="App\Resource.rc" />
@@ -343,6 +346,7 @@
     <ClInclude Include="Game\GameScene.h" />
     <ClInclude Include="Game\Abstract\Attackable.h" />
     <ClInclude Include="Game\Unit\PlayerUnits.h" />
+    <ClInclude Include="Init.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

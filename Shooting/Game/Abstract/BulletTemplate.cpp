@@ -1,7 +1,7 @@
 ﻿#include "BulletTemplate.h"
 
-BulletTemplate::BulletTemplate(Texture spriteSheet, SpriteSheetConfig spriteSheetConfig, Vec2 position, Vec2 collisionBasePoint, Vec2 collisionSize)
-	: SpriteAnimation{ spriteSheet, spriteSheetConfig },
+BulletTemplate::BulletTemplate(String spriteSheetName, SpriteSheetConfig spriteSheetConfig, Vec2 position, Vec2 collisionBasePoint, Vec2 collisionSize)
+	: SpriteAnimation{ spriteSheetName, spriteSheetConfig },
 	CollisionTemplate{ position, collisionBasePoint, collisionSize }
 {
 }

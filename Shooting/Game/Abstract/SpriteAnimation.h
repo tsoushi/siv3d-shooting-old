@@ -17,23 +17,23 @@ class SpriteAnimation
 {
 private:
 	/** スプライトシート */
-	Texture spriteSheet;
+	String spriteSheetName;
 
 	/** スプライトシートの設定 */
 	SpriteSheetConfig spriteSheetConfig;
 public:
 	/**
-	* @param spriteSheet スプライトシートとなるテクスチャ
+	* @param spriteSheetName スプライトシートとなるアセット名
 	* @param config スプライトシートの設定
 	*/
-	SpriteAnimation(Texture spriteSheet, SpriteSheetConfig config);
+	SpriteAnimation(String spriteSheetName, SpriteSheetConfig config);
 
 	/**
-	* @param spriteSheet スプライトシートとなるテクスチャ
+	* @param spriteSheetName スプライトシートとなるアセット名
 	* @param size スプライト１枚のサイズ
 	* @param length スプライトの縦横それぞれの枚数
 	*/
-	SpriteAnimation(Texture spriteSheet, Point size, Point length);
+	SpriteAnimation(String spriteSheetName, Point size, Point length);
 
 	/** スプライトシートから指定したインデックスのスプライトを取得する
 	* @param index インデックス。左上から右へ0から始まる連番。
