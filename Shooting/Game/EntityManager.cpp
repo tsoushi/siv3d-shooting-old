@@ -1,7 +1,5 @@
 ﻿#include "EntityManager.h"
 
-bool DEBUG = true;
-
 void EntityManager::AddPlayerUnit(Unit *unit) {
 	playerUnits << unit;
 }
@@ -21,7 +19,7 @@ void EntityManager::AddEnemyBullet(Bullet* bullet) {
 
 
 void EntityManager::Update() {
-	auto t = Time::GetMicrosec();
+	uint64 debugTime = Time::GetMicrosec();
 	// プレイヤーユニット
 	for (auto unit = playerUnits.begin(); unit != playerUnits.end();) {
 		(*unit)->Update();
@@ -32,7 +30,9 @@ void EntityManager::Update() {
 		}
 		unit++;
 	}
-	if (DEBUG) { Print << U"player unit: " << Time::GetMicrosec() - t; t = Time::GetMicrosec(); }
+
+	debug.updatePlayerUnitTime = Time::GetMicrosec() - debugTime;
+	debugTime = Time::GetMicrosec();
 
 	// 敵ユニット
 	for (auto unit = enemyUnits.begin(); unit != enemyUnits.end();) {
@@ -45,7 +45,9 @@ void EntityManager::Update() {
 		unit++;
 	}
 
-	if (DEBUG) { Print << U"enemy unit: " << Time::GetMicrosec() - t; t = Time::GetMicrosec(); }
+	debug.updateEnemyUnitTime = Time::GetMicrosec() - debugTime;
+	debugTime = Time::GetMicrosec();
+
 	// プレイヤー弾
 	for (auto bullet = playerBullets.begin(); bullet != playerBullets.end();) {
 		(*bullet)->Update();
@@ -62,7 +64,9 @@ void EntityManager::Update() {
 		}
 		bullet++;
 	}
-	if (DEBUG) { Print << U"player bullet: " << Time::GetMicrosec() - t; t = Time::GetMicrosec(); }
+	debug.updatePlayerBulletTime = Time::GetMicrosec() - debugTime;
+	debugTime = Time::GetMicrosec();
+
 	// 敵弾
 	for (auto bullet = enemyBullets.begin(); bullet != enemyBullets.end();) {
 		(*bullet)->Update();
@@ -79,32 +83,43 @@ void EntityManager::Update() {
 		}
 		bullet++;
 	}
-	if (DEBUG) { Print << U"enemy bullet: " << Time::GetMicrosec() - t; }
+
+	debug.updateEnemyBulletTime = Time::GetMicrosec() - debugTime;
 }
 
 
-void EntityManager::Draw() const {
-	auto t = Time::GetMicrosec();
+void EntityManager::Draw() {
+	auto debugTime = Time::GetMicrosec();
+
 	// プレイヤーユニット
 	for (auto unit = playerUnits.begin(); unit != playerUnits.end(); unit++) {
 		(*unit)->Draw();
 	}
-	if (DEBUG) { Print << U"DRAW player unit: " << Time::GetMicrosec() - t; t = Time::GetMicrosec(); }
+
+	debug.drawPlayerUnitTime = Time::GetMicrosec() - debugTime;
+	debugTime = Time::GetMicrosec();
+
 	// 敵ユニット
 	for (auto unit = enemyUnits.begin(); unit != enemyUnits.end(); unit++) {
 		(*unit)->Draw();
 	}
-	if (DEBUG) { Print << U"DRAW enemy unit: " << Time::GetMicrosec() - t; t = Time::GetMicrosec(); }
+
+	debug.drawEnemyUnitTime = Time::GetMicrosec() - debugTime;
+	debugTime = Time::GetMicrosec();
 
 	// プレイヤー弾
 	for (auto bullet = playerBullets.begin(); bullet != playerBullets.end(); bullet++) {
 		(*bullet)->Draw();
 	}
-	if (DEBUG) { Print << U"DRAW player bulelt: " << Time::GetMicrosec() - t; t = Time::GetMicrosec(); }
+
+	debug.drawPlayerBulletTime = Time::GetMicrosec() - debugTime;
+	debugTime = Time::GetMicrosec();
+
 	// 敵弾
 	for (auto bullet = enemyBullets.begin(); bullet != enemyBullets.end(); bullet++) {
 		(*bullet)->Draw();
 	}
-	if (DEBUG) { Print << U"DRAW enemy bullet: " << Time::GetMicrosec() - t; }
+
+	debug.drawEnemyBulletTime = Time::GetMicrosec() - debugTime;
 
 }
