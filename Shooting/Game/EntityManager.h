@@ -21,13 +21,17 @@ class EntityManager
 {
 private:
 	/* プレイヤーユニットの配列 */
-	Array<Unit *> playerUnits;
+	Array<Unit*> playerUnits;
+	Array<Unit*> playerUnitsTmp;
 	/* 敵ユニットの配列 */
-	Array<Unit *> enemyUnits;
+	Array<Unit*> enemyUnits;
+	Array<Unit*> enemyUnitsTmp;
 	/* プレイヤー弾の配列 */
-	Array<Bullet *> playerBullets;
+	Array<Bullet*> playerBullets;
+	Array<Bullet*> playerBulletsTmp;
 	/* 敵弾の配列 */
-	Array<Bullet *> enemyBullets;
+	Array<Bullet*> enemyBullets;
+	Array<Bullet*> enemyBulletsTmp;
 
 public:
 	void AddPlayerUnit(Unit *unit);

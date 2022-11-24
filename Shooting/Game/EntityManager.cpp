@@ -1,24 +1,34 @@
 ﻿#include "EntityManager.h"
 
 void EntityManager::AddPlayerUnit(Unit *unit) {
-	playerUnits << unit;
+	playerUnitsTmp << unit;
 }
 
 void EntityManager::AddEnemyUnit(Unit* unit) {
-	enemyUnits << unit;
+	enemyUnitsTmp << unit;
 }
 
 void EntityManager::AddPlayerBullet(Bullet* bullet) {
-	playerBullets << bullet;
+	playerBulletsTmp << bullet;
 }
 
 void EntityManager::AddEnemyBullet(Bullet* bullet) {
-	enemyBullets << bullet;
+	enemyBulletsTmp << bullet;
 }
 
 
 
 void EntityManager::Update() {
+	/* エンティティ追加予定の配列をマージ */
+	playerUnits.insert(playerUnits.end(), playerUnitsTmp.begin(), playerUnitsTmp.end());
+	enemyUnits.insert(enemyUnits.end(), enemyUnitsTmp.begin(), enemyUnitsTmp.end());
+	playerBullets.insert(playerBullets.end(), playerBulletsTmp.begin(), playerBulletsTmp.end());
+	enemyBullets.insert(enemyBullets.end(), enemyBulletsTmp.begin(), enemyBulletsTmp.end());
+	playerUnitsTmp.clear();
+	enemyUnitsTmp.clear();
+	playerBulletsTmp.clear();
+	enemyBulletsTmp.clear();
+
 	uint64 debugTime = Time::GetMicrosec();
 	// プレイヤーユニット
 	for (auto unit = playerUnits.begin(); unit != playerUnits.end();) {
