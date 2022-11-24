@@ -5,5 +5,5 @@
 class Bullet : public Entity, public Attackable
 {
 public:
-	Bullet();
+	Bullet(EntityRegion region);
 };

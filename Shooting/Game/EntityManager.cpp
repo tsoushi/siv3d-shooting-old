@@ -1,5 +1,16 @@
 ﻿#include "EntityManager.h"
 
+void EntityManager::AddEntity(Entity* entity) {
+	if (Unit* unit = dynamic_cast<Unit*>(entity)) {
+		if (unit->region == EntityRegion::player) AddPlayerUnit(unit);
+		if (unit->region == EntityRegion::enemy) AddEnemyUnit(unit);
+	}
+	else if (Bullet* bullet = dynamic_cast<Bullet*>(entity)) {
+		if (bullet->region == EntityRegion::player) AddPlayerBullet(bullet);
+		if (bullet->region == EntityRegion::enemy) AddEnemyBullet(bullet);
+	}
+}
+
 void EntityManager::AddPlayerUnit(Unit *unit) {
 	playerUnits << unit;
 }

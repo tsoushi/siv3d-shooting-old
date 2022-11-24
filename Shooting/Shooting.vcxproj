@@ -126,7 +126,11 @@
     <ClCompile Include="Game\Abstract\UnitTemplate.cpp" />
     <ClCompile Include="Game\Bullet\EnemyBullet.cpp" />
     <ClCompile Include="Game\EntityManager.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
     <ClCompile Include="Game\GameScene.cpp" />
+    <ClCompile Include="Game\StageManager.cpp" />
+    <ClCompile Include="Game\Stage\CSVStage.cpp" />
+    <ClCompile Include="Game\Stage\Stage.cpp" />
     <ClCompile Include="Game\Unit\Player.cpp" />
     <ClCompile Include="Init.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -345,6 +349,10 @@
     <ClInclude Include="Game\Game.h" />
     <ClInclude Include="Game\GameScene.h" />
     <ClInclude Include="Game\Abstract\Attackable.h" />
+    <ClInclude Include="Game\GameType.h" />
+    <ClInclude Include="Game\StageManager.h" />
+    <ClInclude Include="Game\Stage\CSVStage.h" />
+    <ClInclude Include="Game\Stage\Stage.h" />
     <ClInclude Include="Game\Unit\PlayerUnits.h" />
     <ClInclude Include="Init.h" />
     <ClInclude Include="stdafx.h" />
