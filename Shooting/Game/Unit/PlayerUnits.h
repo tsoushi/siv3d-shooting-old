@@ -3,7 +3,7 @@
 
 class Player : public UnitTemplate {
 public:
-	Player();
+	Player(Vec2 Position);
 	void Move() override;
 	void Draw() const override;
 };

@@ -17,6 +17,7 @@ struct EntityManagerDebug {
 	uint64 drawEnemyBulletTime;
 };
 
+/* エンティティを管理するクラス */
 class EntityManager
 {
 private:
@@ -34,6 +35,7 @@ private:
 	Array<Bullet*> enemyBulletsTmp;
 
 public:
+	void AddEntity(Entity* entity);
 	void AddPlayerUnit(Unit *unit);
 	void AddEnemyUnit(Unit *unit);
 	void AddPlayerBullet(Bullet *bullet);

@@ -1,4 +1,6 @@
 ﻿#include "Bullet.h"
 
-Bullet::Bullet() {
+Bullet::Bullet(EntityRegion region)
+	: Entity{ region }
+{
 }

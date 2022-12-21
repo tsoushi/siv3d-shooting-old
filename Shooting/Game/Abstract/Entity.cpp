@@ -1,5 +1,11 @@
 ﻿#include "Entity.h"
 
+Entity::Entity(EntityRegion region)
+	: region(region)
+{
+
+}
+
 void Entity::Update() {
 
 }

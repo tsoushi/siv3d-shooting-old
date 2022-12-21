@@ -1,8 +1,8 @@
 ﻿#include "PlayerUnits.h"
 #include "../../Common.h"
 
-Player::Player()
-	: UnitTemplate(100, MyAsset::sprite_player, SpriteSheetConfig{ Point{ 16, 16 }, Point{ 4, 2} }, Vec2{ 100, 100 }, Vec2{ -8, -8 }, Vec2{ 16, 16 })
+Player::Player(Vec2 position)
+	: UnitTemplate(EntityRegion::player, 100, MyAsset::sprite_player, SpriteSheetConfig{ Point{ 16, 16 }, Point{ 4, 2} }, position, Vec2{ -8, -8 }, Vec2{ 16, 16 })
 {
 }
 

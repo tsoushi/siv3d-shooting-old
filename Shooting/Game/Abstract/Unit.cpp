@@ -1,7 +1,7 @@
 ﻿#include "Unit.h"
 
-Unit::Unit(int32 hp)
-	: Damageable{ hp }
+Unit::Unit(EntityRegion region, int32 hp)
+	: Entity{ region }, Damageable { hp }
 {
 
 }

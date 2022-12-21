@@ -5,5 +5,5 @@
 class Unit : public Entity, public Damageable
 {
 public:
-	Unit(int32 hp);
+	Unit(EntityRegion region, int32 hp);
 };

@@ -1,24 +1,24 @@
 ﻿#include "GameScene.h"
 #include "Unit/PlayerUnits.h"
 #include "Bullet/EnemyBullets.h"
-
-EntityManager entityManager;
+#include "StageManager.h"
 
 GameScene::GameScene(const InitData& init)
-	: IScene{ init }
+	: IScene{ init },
+	stageManager{ 1, 1 }
 {
-	for (int i = 0; i < 1; i++) entityManager.AddPlayerUnit(new Player());
-	for (int i = 0; i < 1; i++) entityManager.AddEnemyUnit(new Player());
-	for (int i = 0; i < 1; i++) entityManager.AddPlayerBullet(new EnemyBullet());
-	for (int i = 0; i < 1; i++) entityManager.AddEnemyBullet(new EnemyBullet());
+	gameSize = Vec2{ Scene::Width(), Scene::Height() };
 }
 
 void GameScene::update() {
+	stageManager.Update();
 	entityManager.Update();
 }
 
 void GameScene::draw() const {
+	stageManager.Draw();
 	entityManager.Draw();
+
 	DebugDraw();
 }
 
@@ -56,4 +56,5 @@ void GameScene::DebugDraw() const {
 	double entityTotalWeight = weights[0] + weights[1] + weights[2] + weights[3] + weights[4] + weights[5] + weights[6] + weights[7];
 	Print << U"Total: {: >8.1f}%"_fmt(entityTotalWeight)
 		<< U" Rate(entity/all): {: >8.1f}%"_fmt(100 * entityTotalWeight / totalWeight);
+
 }
