@@ -15,7 +15,7 @@ void CSVStage::Update() {
 				int32 xPos;
 				if (stageData.columns(rowNum) >= 2) xPos = ((double)x / (stageData.columns(rowNum) - 1)) * gameSize.x;
 				else xPos = gameSize.x / 2;
-				entityManager.AddEntity(
+				entityManager.AddNewEntity(
 					IntToEntity(
 						Parse<int32>(stageData[rowNum][x]),
 						Vec2{ xPos, 50 }

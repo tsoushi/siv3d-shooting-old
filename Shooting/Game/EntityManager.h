@@ -34,12 +34,18 @@ private:
 	Array<Bullet*> enemyBullets;
 	Array<Bullet*> enemyBulletsTmp;
 
-public:
+	/* 追加予定のエンティティ配列 */
+	Array<Entity*> additionalEntities;
+
 	void AddEntity(Entity* entity);
-	void AddPlayerUnit(Unit *unit);
-	void AddEnemyUnit(Unit *unit);
-	void AddPlayerBullet(Bullet *bullet);
-	void AddEnemyBullet(Bullet *bullet);
+	void AddPlayerUnit(Unit* unit);
+	void AddEnemyUnit(Unit* unit);
+	void AddPlayerBullet(Bullet* bullet);
+	void AddEnemyBullet(Bullet* bullet);
+
+	void EnsureAdditionalEntities();
+public:
+	void AddNewEntity(Entity* entity);
 
 	/* 管理下のエンティティの更新処理を行う */
 	void Update();
