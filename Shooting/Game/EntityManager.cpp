@@ -1,5 +1,16 @@
 ﻿#include "EntityManager.h"
 
+void EntityManager::AddNewEntity(Entity* entity) {
+	additionalEntities << entity;
+}
+
+void EntityManager::EnsureAdditionalEntities() {
+	for (auto entity : additionalEntities) {
+		AddEntity(entity);
+	}
+	additionalEntities.clear();
+}
+
 void EntityManager::AddEntity(Entity* entity) {
 	if (Unit* unit = dynamic_cast<Unit*>(entity)) {
 		if (unit->region == EntityRegion::player) AddPlayerUnit(unit);
@@ -106,6 +117,8 @@ void EntityManager::Update() {
 	}
 
 	debug.updateEnemyBulletTime = Time::GetMicrosec() - debugTime;
+
+	EnsureAdditionalEntities();
 }
 
 
